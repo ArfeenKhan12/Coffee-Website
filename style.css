@@ -6,9 +6,11 @@
     padding-right: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif ;
+    scroll-behavior: scroll;
 }
 
 :root {
+
    /* colors */
     --white-color: #fff;
     --dark-color: #252525;
@@ -40,6 +42,11 @@
 
     --site-max-width: 1300px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 header{
     position: fixed;
@@ -294,6 +301,7 @@ ul{
 }
 
 .testimonials-section .testimonial {
+    user-select: none;
     display: flex;
     padding: 35px;
     text-align: center;
@@ -429,6 +437,44 @@ ul{
     background: transparent;
 }
 
+/* Footer section styling */
+
+.footer-section{
+    padding: 20px 0;
+    background: var(--dark-color);
+}
+
+.footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text,
+ .social-link, .policy-link) {
+    color: var(--white-color);
+    transition: 0.2s ease;
+ }
+
+ .footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+ }
+
+ .footer-section .social-link-list .social-link {
+    font-size: var(--font-size-l);
+ }
+
+ .footer-section .social-link .social-link:hover {
+     color: var(--secondary-color);
+
+ }
+
+  .footer-section .policy-text .separator {
+    margin: 0 5px;
+    color: var(--white-color);
+  }
+
 /* Responsive media query code for max width 900px */
 @media  screen and (max-width: 900px) {
     :root{
@@ -512,7 +558,7 @@ ul{
 
     .about-section .section-content {
         gap: 70px;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .about-section .about-image-wrapper .about-image{
@@ -577,6 +623,11 @@ ul{
 
     .testimonials-section .swiper-slide-button{
         display: none;
+    }
+
+    .footer-section .section-content {
+        flex-direction: column;
+        gap: 20px;
     }
     
 }
